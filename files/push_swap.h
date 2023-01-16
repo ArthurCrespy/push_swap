@@ -18,9 +18,14 @@
 # define PUSH_SWAP_H
 
 # include <stdio.h>
+# include <limits.h>
+# include <unistd.h>
 
-void    push_swap(int argc, char **argv);
+int push_swap(int argc, char **argv);
+
+int check_args(int i_stack_a, char **stack_a);
 
 int	ft_strlen(const char *str);
-
+int	ft_strcmp(const char *s1, const char *s2);
+int	ft_atoi(const char *str);
 #endif

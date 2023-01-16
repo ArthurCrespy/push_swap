@@ -10,7 +10,7 @@
 #                                                                              #
 # **************************************************************************** #
 
-SRCS = push_swap.c errors.c utils.c main.c \
+SRCS = push_swap.c errors.c utils.c sort.c main.c \
 
 NAME = push_swap
 

@@ -1,6 +1,19 @@
-#include <stdio.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: acrespy <acrespy@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/01/16 14:17:56 by acrespy           #+#    #+#             */
+/*   Updated: 2023/01/16 14:18:20 by acrespy          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-int main() {
-	printf("Hello, World!\n");
-	return 0;
+#include "push_swap.h"
+
+int     main(int argc, char **argv)
+{
+	push_swap(argc, argv);
+	return (0);
 }

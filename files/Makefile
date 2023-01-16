@@ -10,17 +10,17 @@
 #                                                                              #
 # **************************************************************************** #
 
-SRCS = push_swap.c main.c \
+SRCS = push_swap.c errors.c utils.c main.c \
 
 NAME = push_swap
 
 CC	= cc
-CFLAGS	= -Wall -Wextra -Werror
+CFLAGS	= -Wall -Wextra -Werror -g
 
 RM	= rm -rf
 
-all:	${NAME}
-	${CC} ${CFLAGS} -o ${NAME} ${SRCS}
+all:	#${NAME}
+	@${CC} ${CFLAGS} -o ${NAME} ${SRCS}
 
 clean:
 	${RM} ${NAME}

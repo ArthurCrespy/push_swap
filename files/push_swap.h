@@ -6,13 +6,9 @@
 /*   By: acrespy <acrespy@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 14:18:02 by acrespy           #+#    #+#             */
-/*   Updated: 2023/01/16 14:18:23 by acrespy          ###   ########.fr       */
+/*   Updated: 2023/01/16 20:10:57 by acrespy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-//
-// Created by Arthur on 13/01/2023.
-//
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
@@ -20,12 +16,40 @@
 # include <stdio.h>
 # include <limits.h>
 # include <unistd.h>
+# include <stdlib.h>
 
-int push_swap(int argc, char **argv);
+// push_swap.c
+int			push_swap(int argc, char **argv);
 
-int check_args(int i_stack_a, char **stack_a);
+// errors.c
+int			check_args(int i_stack_a, char **stack_a);
 
-int	ft_strlen(const char *str);
-int	ft_strcmp(const char *s1, const char *s2);
-int	ft_atoi(const char *str);
+// utils.c
+int			ft_strlen(const char *str);
+int			ft_strcmp(const char *s1, const char *s2);
+long		ft_atoi(const char *str);
+
+// sort.c
+void		sort_stack(int i_stack_a, char **stack_a);
+void		sanitize_stack(char **stack_a);
+
+// swap.c
+void	sa(char **stack_a);
+void	sb(char **stack_b);
+void	ss(char **stack_a, char **stack_b);
+
+// push.c
+void		pa(char **stack_a, char **stack_b);
+void		pb(char **stack_a, char **stack_b);
+
+// rotate.c
+void		ra(char **stack_a);
+void		rb(char **stack_b);
+void		rr(char **stack_a, char **stack_b);
+
+// reverse_rotate.c
+void		rra(char **stack_a);
+void		rrb(char **stack_b);
+void		rrr(char **stack_a, char **stack_b);
+
 #endif

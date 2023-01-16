@@ -6,13 +6,13 @@
 /*   By: acrespy <acrespy@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 14:18:04 by acrespy           #+#    #+#             */
-/*   Updated: 2023/01/16 14:18:23 by acrespy          ###   ########.fr       */
+/*   Updated: 2023/01/16 16:21:00 by acrespy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int     check_args_nb(int i_stack_a)
+int	check_args_nb(int i_stack_a)
 {
 	if (i_stack_a == 1)
 		return (1);
@@ -21,10 +21,10 @@ int     check_args_nb(int i_stack_a)
 	return (0);
 }
 
-int     check_args_content(char **stack_a)
+int	check_args_content(char **stack_a)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	i = 1;
 	while (stack_a[i])
@@ -41,10 +41,10 @@ int     check_args_content(char **stack_a)
 	return (0);
 }
 
-int     check_args_duplicate(char **stack_a)
+int	check_args_duplicate(char **stack_a)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	i = 1;
 	while (stack_a[i])
@@ -61,9 +61,9 @@ int     check_args_duplicate(char **stack_a)
 	return (0);
 }
 
-int     check_args_sorted(int i_stack_a, char **stack_a)
+int	check_args_sorted(int i_stack_a, char **stack_a)
 {
-	int i;
+	int	i;
 
 	i = 1;
 	while (i < i_stack_a - 1)
@@ -75,7 +75,7 @@ int     check_args_sorted(int i_stack_a, char **stack_a)
 	return (1);
 }
 
-int     check_args(int i_stack_a, char **stack_a)
+int	check_args(int i_stack_a, char **stack_a)
 {
 	if (check_args_nb(i_stack_a) == 1)
 		return (1);

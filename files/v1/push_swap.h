@@ -25,18 +25,20 @@ int			push_swap(int argc, char **argv);
 int			check_args(int i_stack_a, char **stack_a);
 
 // utils.c
-int			ft_strlen(const char *str);
 int			ft_strcmp(const char *s1, const char *s2);
 long		ft_atoi(const char *str);
+char		*ft_calloc(size_t nmemb, size_t size);
 
 // sort.c
 void		sort_stack(int i_stack_a, char **stack_a);
-void		sanitize_stack(char **stack_a);
+
+// sanitize.c
+void		sanitize_stack(int i_stack_a, char **stack_a);
 
 // swap.c
-void	sa(char **stack_a);
-void	sb(char **stack_b);
-void	ss(char **stack_a, char **stack_b);
+void		sa(char **stack_a);
+void		sb(char **stack_b);
+void		ss(char **stack_a, char **stack_b);
 
 // push.c
 void		pa(char **stack_a, char **stack_b);

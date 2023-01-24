@@ -19,16 +19,6 @@ int	ft_isspace(const char c)
 	return (0);
 }
 
-int	ft_strlen(const char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
-}
-
 int	ft_strcmp(const char *s1, const char *s2)
 {
 	unsigned int	i;
@@ -42,6 +32,27 @@ int	ft_strcmp(const char *s1, const char *s2)
 			return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 	}
 	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
+}
+
+char	*ft_calloc(size_t nmemb, size_t size)
+{
+	size_t	i;
+	char	*result;
+
+	i = 0;
+	if ((size != 0 && nmemb != 0) && ((nmemb * size) / size != nmemb))
+		return (NULL);
+	if (nmemb == 0 || size == 0)
+		return (NULL);
+	result = malloc(nmemb * size);
+	if (!result)
+		return (NULL);
+	while (i < nmemb * size)
+	{
+		result[i] = '\0';
+		i++;
+	}
+	return (result);
 }
 
 long	ft_atoi(const char *str)

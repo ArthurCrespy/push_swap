@@ -17,5 +17,6 @@ int	push_swap(int i_stack_a, char **stack_a)
 	if (check_args(i_stack_a, stack_a))
 		return (1);
 	sort_stack(i_stack_a, stack_a);
+
 	return (0);
 }

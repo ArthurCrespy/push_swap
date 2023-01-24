@@ -1,37 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort.c                                             :+:      :+:    :+:   */
+/*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acrespy <acrespy@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/16 17:56:44 by acrespy           #+#    #+#             */
-/*   Updated: 2023/01/16 17:57:01 by acrespy          ###   ########.fr       */
+/*   Created: 2023/01/16 20:02:16 by acrespy           #+#    #+#             */
+/*   Updated: 2023/01/16 20:09:24 by acrespy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	sort_stack(int i_stack_a, char **stack_a)
+void	ra(char **stack_a) //Shift up all elements of stack a by 1. The first element becomes the last one.
 {
-	(void)i_stack_a;
-	sanitize_stack(stack_a);
-	sa(stack_a);
-	while (*stack_a)
-	{
-		printf("%s\n", *stack_a);
-		stack_a++;
-	}
+	(void)stack_a;
 }
 
-void	sanitize_stack(char **stack_a)
+void	rb(char **stack_b)
 {
-	int	i;
+	int		i;
+	char	*tmp;
 
 	i = 0;
-	while (stack_a[i])
-	{
-		stack_a[i] = stack_a[i + 1];
+	while (stack_b[i])
 		i++;
+	tmp = stack_b[i - 1];
+	while (i > 0)
+	{
+		stack_b[i] = stack_b[i - 1];
+		i--;
 	}
+	stack_b[0] = tmp;
+}
+
+void	rr(char **stack_a, char **stack_b)
+{
+	ra(stack_a);
+	rb(stack_b);
 }

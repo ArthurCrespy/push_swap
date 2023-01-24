@@ -14,32 +14,63 @@
 
 void	pa(char **stack_a, char **stack_b)
 {
-	int	i;
+	int		i;
+	int		i2;
+	char	*tmp;
 
 	i = 0;
-	while (stack_a[i])
-		i++;
-	stack_a[i] = stack_b[0];
-	i = 0;
+	i2 = 0;
+	tmp = (char*)malloc(sizeof(char) * 12);
 	while (stack_b[i])
-	{
-		stack_b[i] = stack_b[i + 1];
 		i++;
+	while (stack_a[i2])
+		i2++;
+	if (i == 0)
+		return ;
+	i2--;
+	while (i2 >= 0)
+	{
+		stack_a[i2 + 1] = stack_a[i2];
+		i2--;
 	}
+	stack_a[0] = stack_b[0];
+	i2 = 0;
+	while (stack_b[i2 + 1])
+	{
+		stack_b[i2] = stack_b[i2 + 1];
+		i2++;
+	}
+	stack_b[i2] = NULL;
 }
 
 void	pb(char **stack_a, char **stack_b)
 {
-	int	i;
+	int		i;
+	int		i2;
+	char	*tmp;
 
 	i = 0;
-	while (stack_b[i])
-		i++;
-	stack_b[i] = stack_a[0];
-	i = 0;
+	i2 = 0;
+	tmp = (char*)malloc(sizeof(char) * 12);
 	while (stack_a[i])
-	{
-		stack_a[i] = stack_a[i + 1];
 		i++;
+	while (stack_b[i2])
+		i2++;
+	if (i == 0)
+		return ;
+	i2--;
+	while (i2 >= 0)
+	{
+		stack_b[i2 + 1] = stack_b[i2];
+		i2--;
 	}
+	stack_b[0] = stack_a[0];
+	i2 = 0;
+	while (stack_a[i2 + 1])
+	{
+		stack_a[i2] = stack_a[i2 + 1];
+		i2++;
+	}
+	stack_a[i2] = NULL;
 }
+ 

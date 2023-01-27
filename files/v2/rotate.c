@@ -15,19 +15,14 @@
 void	ra(t_node **stack_a)
 {
 	t_node	*tmp;
-	t_node	*last_node;
 
 	tmp = *stack_a;
 	while (tmp->next != NULL)
-	{
-		last_node = tmp;
 		tmp = tmp->next;
-	}
-	last_node->next = NULL;
 	tmp->next = *stack_a;
+	*stack_a = (*stack_a)->next;
 	*stack_a = tmp;
-	print_func("rra");
-	print_list(*stack_a);
+	print_func("ra");
 }
 
 void	rb(t_node **stack_b)
@@ -44,8 +39,7 @@ void	rb(t_node **stack_b)
 	last_node->next = NULL;
 	tmp->next = *stack_b;
 	*stack_b = tmp;
-	print_func("rrb");
-	print_list(*stack_b);
+	print_func("rb");
 }
 
 void	rr(t_node **stack_a, t_node **stack_b)

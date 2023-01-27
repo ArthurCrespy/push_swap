@@ -12,6 +12,12 @@
 
 #include "push_swap.h"
 
+void    rra_sa(t_node **stack_a)
+{
+	rra(stack_a);
+	sa(*stack_a);
+}
+
 size_t	ft_strlen(const char *s)
 {
 	int	i;

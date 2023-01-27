@@ -17,7 +17,8 @@ int	main(int argc, char **argv)
 /*	int     result;
 	result = push_swap(argc, argv);
 	printf("%d\n", result);*/
-
+	(void)argc;
+	(void)argv;
 	push_swap(argc, argv);
 	return (0);
 }

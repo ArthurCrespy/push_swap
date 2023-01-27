@@ -6,7 +6,7 @@
 /*   By: acrespy <acrespy@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 14:18:02 by acrespy           #+#    #+#             */
-/*   Updated: 2023/01/16 20:10:57 by acrespy          ###   ########.fr       */
+/*   Updated: 2023/01/24 19:07:08 by acrespy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,40 +18,48 @@
 # include <unistd.h>
 # include <stdlib.h>
 
+typedef struct Node {
+	int			data;
+	struct Node	*next;
+}				t_node;
+
 // push_swap.c
-int			push_swap(int argc, char **argv);
+int			push_swap(int i_stack_a, char **stack_a);
 
 // errors.c
 int			check_args(int i_stack_a, char **stack_a);
 
 // utils.c
+void		go_last(t_node *stack);
+void		clear_list(t_node *stack_a);
+void		add_node(t_node **stack_a, int element);
+void		print_list(t_node *stack);
+void		print_func(char *str);
 int			ft_strcmp(const char *s1, const char *s2);
 long		ft_atoi(const char *str);
 char		*ft_calloc(size_t nmemb, size_t size);
 
-// sort.c
-void		sort_stack(int i_stack_a, char **stack_a);
-
 // sanitize.c
-void		sanitize_stack(int i_stack_a, char **stack_a);
+int			sanitize_stack(int i_stack_a, char **stack_a);
 
 // swap.c
-void		sa(char **stack_a);
-void		sb(char **stack_b);
-void		ss(char **stack_a, char **stack_b);
+void		sa(t_node *stack_a);
+void		sb(t_node *stack_b);
+void		ss(t_node *stack_a, t_node *stack_b);
 
 // push.c
-void		pa(char **stack_a, char **stack_b);
-void		pb(char **stack_a, char **stack_b);
+void		pa(t_node **stack_a, t_node **stack_b);
+void		pb(t_node **stack_a, t_node **stack_b);
 
 // rotate.c
-void		ra(char **stack_a);
-void		rb(char **stack_b);
-void		rr(char **stack_a, char **stack_b);
+void		ra(t_node **stack_a);
+void		rb(t_node **stack_b);
+void		rr(t_node **stack_a, t_node **stack_b);
 
 // reverse_rotate.c
-void		rra(char **stack_a);
-void		rrb(char **stack_b);
-void		rrr(char **stack_a, char **stack_b);
+void		rra(t_node **stack_a);
+void		rrb(t_node **stack_b);
+void		double_rra(t_node *stack_a);
+void		rrr(t_node *stack_a, t_node *stack_b);
 
 #endif

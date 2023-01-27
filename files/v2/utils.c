@@ -12,6 +12,66 @@
 
 #include "push_swap.h"
 
+size_t	ft_strlen(const char *s)
+{
+	int	i;
+
+	i = 0;
+	while (s[i] != 0x00)
+		i++;
+	return (i);
+}
+
+void	go_last(t_node *stack)
+{
+	t_node	*temp;
+
+	temp = stack;
+	while (temp->next != NULL)
+		temp = temp->next;
+}
+
+void	clear_list(t_node *stack_a)
+{
+	t_node	*tmp;
+
+	while (stack_a != NULL)
+	{
+		tmp = stack_a;
+		stack_a = stack_a->next;
+		free(tmp);
+	}
+}
+
+void	add_node(t_node **stack_a, int element)
+{
+	t_node	*ptr;
+
+	ptr = malloc(sizeof(struct Node));
+	if (!ptr)
+		clear_list(*stack_a);
+	ptr->data = element;
+	ptr->next = *stack_a;
+	*stack_a = ptr;
+}
+
+void	print_list(t_node *stack)
+{
+	while (stack != NULL)
+	{
+		printf("%d ", stack->data);
+		stack = stack->next;
+	}
+	printf("\n");
+
+}
+
+void	print_func(char *str)
+{
+	write(1, str, ft_strlen(str));
+	write(1, "\n", 1);
+}
+
 int	ft_isspace(const char c)
 {
 	if ((c >= 9 && c <= 13) || c == 32)

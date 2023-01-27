@@ -11,7 +11,7 @@
 # **************************************************************************** #
 
 SRCS = errors.c main.c push.c push_swap.c reverse_rotate.c rotate.c \
-		sanitize.c sort.c swap.c utils.c \
+		sanitize.c swap.c utils.c \
 
 NAME = push_swap
 

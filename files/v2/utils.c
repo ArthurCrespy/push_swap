@@ -28,13 +28,19 @@ size_t	ft_strlen(const char *s)
 	return (i);
 }
 
-void	go_last(t_node *stack)
+size_t	ft_nodelen(t_node *stack)
 {
+	size_t		i;
 	t_node	*temp;
 
+	i = 1;
 	temp = stack;
 	while (temp->next != NULL)
+	{
 		temp = temp->next;
+		i++;
+	}
+	return (i);
 }
 
 void	clear_list(t_node *stack_a)

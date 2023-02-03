@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
+#include "push_swap.h"
 
 int	push_swap(int i_stack_a, char **c_stack_a)
 {
@@ -27,21 +27,18 @@ int	push_swap(int i_stack_a, char **c_stack_a)
 		add_node(&stack_a, ft_atoi(c_stack_a[i_stack_a]));
 		i_stack_a--;
 	}
-
 	printf("stack_a before: ");
 	print_list(stack_a);
 	printf("\n");
-
-	//ra(&stack_a);
-
-	little_stack_sort(&stack_a);
-
+	if (ft_nodelen(stack_a) == 3)
+		little_stack_sort(&stack_a);
+	else
+	{
+		rrb(&stack_a);
+	}
 	printf("stack_a after: ");
 	print_list(stack_a);
 	printf("\n");
-
-
-	//sort_stack(i_stack_a, stack_a);
 
 	clear_list(stack_a);
 	clear_list(stack_b);

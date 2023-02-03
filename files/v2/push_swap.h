@@ -27,14 +27,14 @@ typedef struct Node {
 int			push_swap(int i_stack_a, char **stack_a);
 
 // algorithms.c
-void		little_stack_sort(t_node **stack_a)
+void		little_stack_sort(t_node **stack_a);
 
 // errors.c
 int			check_args(int i_stack_a, char **stack_a);
 
 // utils.c
-void        rra_sa(t_node **stack_a)
-void		go_last(t_node *stack);
+void        rra_sa(t_node **stack_a);
+size_t		ft_nodelen(t_node *stack);
 void		clear_list(t_node *stack_a);
 void		add_node(t_node **stack_a, int element);
 void		print_list(t_node *stack);

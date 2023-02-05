@@ -10,30 +10,30 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
-void	pa(t_node **stack_a, t_node **stack_b)
+void pa(t_node **stack_a, t_node **stack_b)
 {
-	t_node	*tmp;
+	t_node *tmp;
 
 	if (*stack_b == NULL)
 		return ;
 	tmp = *stack_b;
-	*stack_b = (*stack_b)->next;
+	*stack_b = tmp->next;
 	tmp->next = *stack_a;
 	*stack_a = tmp;
 	print_func("pa");
 }
 
-void	pb(t_node **stack_a, t_node **stack_b)
+void pb(t_node **stack_a, t_node **stack_b)
 {
-	t_node	*tmp;
+	t_node *tmp;
 
 	if (*stack_a == NULL)
 		return ;
 	tmp = *stack_a;
-	*stack_a = (*stack_a)->next;
+	*stack_a = tmp->next;
 	tmp->next = *stack_b;
-	*stack_a = tmp;
+	*stack_b = tmp;
 	print_func("pb");
 }

@@ -12,18 +12,24 @@
 
 NAME        := push_swap
 
-SRC_DIR     := src
+SRC_DIR     := srcs
 SRCS := \
-			server.c \
-			utils.c  \
-			lists.c  \
+			algorithms.c \
+			errors.c \
+			main.c \
+			push.c \
+			push_swap.c \
+			rotate.c \
+			sanitize.c \
+			swap.c \
+			utils.c \
 
 SRCS := ${SRCS:%=${SRC_DIR}/%}
 
 OBJ_DIR     := .objs
 OBJS := ${SRCS:${SRC_DIR}/%.c=${OBJ_DIR}/%.o}
 
-CC          := clang
+CC          := gcc
 CFLAGS      := -Wall -Wextra -Werror
 
 RM          := rm -f

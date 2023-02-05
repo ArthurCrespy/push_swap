@@ -10,17 +10,24 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
 void	ra(t_node **stack_a)
 {
 	t_node	*tmp;
+	t_node	*last_node;
 
+	if (*stack_a == NULL)
+		return ;
 	tmp = *stack_a;
+	last_node = NULL;
 	while (tmp->next != NULL)
+	{
+		last_node = tmp;
 		tmp = tmp->next;
+	}
+	last_node->next = NULL;
 	tmp->next = *stack_a;
-	*stack_a = (*stack_a)->next;
 	*stack_a = tmp;
 	print_func("ra");
 }

@@ -28,6 +28,7 @@ int			push_swap(int i_stack_a, char **stack_a);
 
 // algorithms.c
 void		little_stack_sort(t_node **stack_a);
+void        medium_stack_sort(t_node **stack_a, t_node **stack_b, int len);
 
 // errors.c
 int			check_args(int i_stack_a, char **stack_a);

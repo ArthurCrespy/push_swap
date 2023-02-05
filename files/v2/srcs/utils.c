@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
 void    rra_sa(t_node **stack_a)
 {
@@ -80,8 +80,14 @@ void	print_list(t_node *stack)
 
 void	print_func(char *str)
 {
+	static int	i = 0;
+
+	if (i != 0)
+		write(1, "\n", 1);
+	else if (i == 0)
+		i++;
 	write(1, str, ft_strlen(str));
-	write(1, "\n", 1);
+
 }
 
 int	ft_isspace(const char c)

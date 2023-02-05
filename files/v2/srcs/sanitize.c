@@ -1,40 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   swap.c                                             :+:      :+:    :+:   */
+/*   sanitize.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acrespy <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/24 19:09:36 by acrespy           #+#    #+#             */
-/*   Updated: 2023/01/24 19:09:38 by acrespy          ###   ########.fr       */
+/*   Created: 2023/01/17 15:14:22 by acrespy           #+#    #+#             */
+/*   Updated: 2023/01/24 19:02:35 by acrespy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
-void	sa(t_node *stack_a)
+void	sanitize_content_stack(char **stack_a)
 {
-	int	tmp;
+	int	i;
 
-	tmp = stack_a->data;
-	stack_a->data = stack_a->next->data;
-	stack_a->next->data = tmp;
-	print_func("sa");
+	i = 0;
+	while (stack_a[i])
+	{
+		stack_a[i] = stack_a[i + 1];
+		i++;
+	}
 }
 
-void	sb(t_node *stack_b)
+int		sanitize_i_stack(int i_stack_a)
 {
-	int	tmp;
-
-	tmp = stack_b->data;
-	stack_b->data = stack_b->next->data;
-	stack_b->next->data = tmp;
-	print_func("sb");
+	return (i_stack_a - 2);
 }
 
-void	ss(t_node *stack_a, t_node *stack_b)
+int		sanitize_stack(int i_stack_a, char **stack_a)
 {
-	sa(stack_a);
-	sb(stack_b);
-	print_func("ss");
+	sanitize_content_stack(stack_a);
+	return (sanitize_i_stack(i_stack_a));
 }

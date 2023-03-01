@@ -14,5 +14,7 @@
 
 void	medium_stack_sort(t_data **stack_a, t_data **stack_b)
 {
+	(void)stack_a;
+	(void)stack_b;
 	printf("medium_stack_sort\n");
 }

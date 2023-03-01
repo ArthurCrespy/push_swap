@@ -3,19 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   reverse_rotate.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: acrespy <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: acrespy <acrespy@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/24 19:09:03 by acrespy           #+#    #+#             */
-/*   Updated: 2023/01/24 19:09:09 by acrespy          ###   ########.fr       */
+/*   Created: 2023/03/01 12:04:23 by acrespy           #+#    #+#             */
+/*   Updated: 2023/03/01 12:04:23 by acrespy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	rra(t_node **stack_a)
+void	rra(t_data **stack_a)
 {
-	t_node	*tmp;
-	t_node	*last_node;
+	t_data	*tmp;
+	t_data	*last_node;
 
 	tmp = *stack_a;
 	while (tmp->next != NULL)
@@ -26,13 +26,14 @@ void	rra(t_node **stack_a)
 	last_node->next = NULL;
 	tmp->next = *stack_a;
 	*stack_a = tmp;
-	print_func("rra");
+	free(last_node);
+	ft_print_func("rra");
 }
 
-void	rrb(t_node **stack_b)
+void	rrb(t_data **stack_b)
 {
-	t_node	*tmp;
-	t_node	*last_node;
+	t_data	*tmp;
+	t_data	*last_node;
 
 	tmp = *stack_b;
 	while (tmp->next != NULL)
@@ -43,18 +44,5 @@ void	rrb(t_node **stack_b)
 	last_node->next = NULL;
 	tmp->next = *stack_b;
 	*stack_b = tmp;
-	print_func("rrb");
-}
-
-void	rrr(t_node *stack_a, t_node *stack_b)
-{
-	rra(&stack_a);
-	rrb(&stack_b);
-	print_func("rrr");
-}
-
-void	double_rra(t_node **stack_a)
-{
-	rra(stack_a);
-	rra(stack_a);
+	ft_print_func("rrb");
 }

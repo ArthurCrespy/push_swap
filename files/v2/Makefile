@@ -14,13 +14,15 @@ NAME        := push_swap
 
 SRC_DIR     := srcs
 SRCS := \
-			algorithms.c \
 			errors.c \
+			large_sort.c \
+			lists.c \
+			little_sort.c \
 			main.c \
+			medium_sort.c \
 			push.c \
-			push_swap.c \
+			reverse_rotate.c \
 			rotate.c \
-			sanitize.c \
 			swap.c \
 			utils.c \
 
@@ -29,8 +31,8 @@ SRCS := ${SRCS:%=${SRC_DIR}/%}
 OBJ_DIR     := .objs
 OBJS := ${SRCS:${SRC_DIR}/%.c=${OBJ_DIR}/%.o}
 
-CC          := gcc
-CFLAGS      := -Wall -Wextra -Werror
+CC          := clang
+CFLAGS      := -Wall -Wextra -Werror -g
 
 RM          := rm -f
 MAKEFLAGS   += --no-print-directory

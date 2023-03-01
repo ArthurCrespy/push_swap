@@ -18,53 +18,54 @@
 # include <unistd.h>
 # include <stdlib.h>
 
-typedef struct Node {
-	int			data;
-	struct Node	*next;
-}				t_node;
+typedef struct s_data {
+	int				data;
+	int				index;
+	struct s_data	*next;
+}				t_data;
 
-// push_swap.c
-int			push_swap(int i_stack_a, char **stack_a);
+/* ---------- ERRORS --------- */
+int		check_args(int i_stack_a, char **stack_a);
 
-// algorithms.c
-void		little_stack_sort(t_node **stack_a);
-void        medium_stack_sort(t_node **stack_a, t_node **stack_b, int len);
+/* --------- LA-SORT --------- */
+void    large_stack_sort(t_data **stack_a, t_data **stack_b, int size);
 
-// errors.c
-int			check_args(int i_stack_a, char **stack_a);
+/* ---------- LISTS ---------- */
+size_t	ft_nodelen(t_data *stack);
+void	add_node(t_data **stack, int element);
+void    add_node_first(t_data **stack, int element);
+void    remove_node(t_data **stack);
+void    create_stack(t_data **stack_a, int argc, char **argv);
+void	print_list(t_data *stack_a, t_data *stack_b);
 
-// utils.c
-void        rra_sa(t_node **stack_a);
-size_t		ft_nodelen(t_node *stack);
-void		clear_list(t_node *stack_a);
-void		add_node(t_node **stack_a, int element);
-void		print_list(t_node *stack);
-void		print_func(char *str);
-int			ft_strcmp(const char *s1, const char *s2);
-long		ft_atoi(const char *str);
-char		*ft_calloc(size_t nmemb, size_t size);
+/* --------- LI-SORT --------- */
+void	little_stack_sort(t_data **stack_a);
 
-// sanitize.c
-int			sanitize_stack(int i_stack_a, char **stack_a);
+/* ---------- M-SORT --------- */
+void	medium_stack_sort(t_data **stack_a, t_data **stack_b);
 
-// swap.c
-void		sa(t_node *stack_a);
-void		sb(t_node *stack_b);
-void		ss(t_node *stack_a, t_node *stack_b);
+/* ---------- UTILS ---------- */
+void	ft_print_func(char *str);
+int		ft_strcmp(const char *s1, const char *s2);
+long	ft_atoi(const char *str);
 
-// push.c
-void		pa(t_node **stack_a, t_node **stack_b);
-void		pb(t_node **stack_a, t_node **stack_b);
+/* ----------- SWAP ---------- */
+void	sa(t_data *stack_a);
+void	sb(t_data *stack_b);
+void	ss(t_data *stack_a, t_data  *stack_b);
 
-// rotate.c
-void		ra(t_node **stack_a);
-void		rb(t_node **stack_b);
-void		rr(t_node **stack_a, t_node **stack_b);
+/* --------- R-ROTATE -------- */
+void	rra(t_data **stack_a);
+void	rrb(t_data **stack_b);
 
-// reverse_rotate.c
-void		rra(t_node **stack_a);
-void		rrb(t_node **stack_b);
-void		double_rra(t_node **stack_a);
-void		rrr(t_node *stack_a, t_node *stack_b);
+/* ---------- ROTATE --------- */
+void	ra(t_data **stack_a);
+void	rb(t_data **stack_b);
+void	rr(t_data **stack_a, t_data **stack_b);
+
+/* ----------- PUSH ---------- */
+void	pa(t_data **stack_a, t_data **stack_b);
+void	pb(t_data **stack_a, t_data **stack_b);
+
 
 #endif

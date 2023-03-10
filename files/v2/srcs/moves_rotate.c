@@ -1,48 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   reverse_rotate.c                                   :+:      :+:    :+:   */
+/*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acrespy <acrespy@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/01 12:04:23 by acrespy           #+#    #+#             */
-/*   Updated: 2023/03/01 12:04:23 by acrespy          ###   ########.fr       */
+/*   Created: 2023/01/24 19:09:20 by acrespy           #+#    #+#             */
+/*   Updated: 2023/01/24 19:09:23 by acrespy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	rra(t_data **stack_a)
+void	ra(t_data **stack_a)
 {
 	t_data	*tmp;
-	t_data	*last_node;
+	t_data	*tmp2;
 
 	tmp = *stack_a;
-	while (tmp->next != NULL)
-	{
-		last_node = tmp;
+	tmp2 = *stack_a;
+	while (tmp->next)
 		tmp = tmp->next;
-	}
-	last_node->next = NULL;
-	tmp->next = *stack_a;
-	*stack_a = tmp;
-	free(last_node);
-	ft_print_func("rra");
+	tmp->next = tmp2;
+	*stack_a = tmp2->next;
+	tmp2->next = NULL;
+	ft_print_func("ra");
 }
 
-void	rrb(t_data **stack_b)
+void	rb(t_data **stack_b)
 {
 	t_data	*tmp;
-	t_data	*last_node;
+	t_data	*tmp2;
 
 	tmp = *stack_b;
-	while (tmp->next != NULL)
-	{
-		last_node = tmp;
+	tmp2 = *stack_b;
+	while (tmp->next)
 		tmp = tmp->next;
-	}
-	last_node->next = NULL;
-	tmp->next = *stack_b;
-	*stack_b = tmp;
-	ft_print_func("rrb");
+	tmp->next = tmp2;
+	*stack_b = tmp2->next;
+	tmp2->next = NULL;
+	ft_print_func("rb");
 }

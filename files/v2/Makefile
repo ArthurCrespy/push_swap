@@ -15,15 +15,17 @@ NAME        := push_swap
 SRC_DIR     := srcs
 SRCS := \
 			errors.c \
-			large_sort.c \
-			lists.c \
-			little_sort.c \
+			lists_add_nodes.c \
+			lists_print.c \
+			lists_remove_nodes.c \
+			lists_utils.c \
 			main.c \
-			medium_sort.c \
-			push.c \
-			reverse_rotate.c \
-			rotate.c \
-			swap.c \
+			moves_push.c \
+			moves_reverse_rotate.c \
+			moves_rotate.c \
+			moves_swap.c \
+			sort_large.c \
+			sort_little.c \
 			utils.c \
 
 SRCS := ${SRCS:%=${SRC_DIR}/%}

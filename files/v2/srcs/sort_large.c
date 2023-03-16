@@ -12,21 +12,35 @@
 
 #include "../includes/push_swap.h"
 
-int	ft_biggest_index(t_data *stack_b)
+int	ft_lowest_index(t_data *stack)
 {
 	int	i;
 
 	i = 0;
-	while (stack_b)
+	while (stack)
 	{
-		if (stack_b->index > i)
-			i = stack_b->index;
-		stack_b = stack_b->next;
+		if (stack->index < i)
+			i = stack->index;
+		stack = stack->next;
 	}
 	return (i);
 }
 
-void	go_to_index(t_data **stack_b, int index)
+int	ft_biggest_index(t_data *stack)
+{
+	int	i;
+
+	i = 0;
+	while (stack)
+	{
+		if (stack->index > i)
+			i = stack->index;
+		stack = stack->next;
+	}
+	return (i);
+}
+
+void	go_to_b_index(t_data **stack_b, int index)
 {
 	int		i;
 	t_data	*tmp;
@@ -57,7 +71,7 @@ void	ft_push_sort(t_data **stack_a, t_data **stack_b)
 	i = ft_biggest_index(*stack_b);
 	while (*stack_b)
 	{
-		go_to_index(stack_b, i);
+		go_to_b_index(stack_b, i);
 		if ((*stack_b)->index == i)
 		{
 			pa(stack_a, stack_b);

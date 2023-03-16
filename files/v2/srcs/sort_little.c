@@ -24,9 +24,9 @@ void	little_stack_sort(t_data **stack_a)
 	int	b;
 	int	c;
 
-	a = (*stack_a)->data;
-	b = (*stack_a)->next->data;
-	c = (*stack_a)->next->next->data;
+	a = (*stack_a)->index;
+	b = (*stack_a)->next->index;
+	c = (*stack_a)->next->next->index;
 	if (a > b && b > c)
 	{
 		sa(*stack_a);

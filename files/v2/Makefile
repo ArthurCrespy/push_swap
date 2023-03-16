@@ -26,6 +26,7 @@ SRCS := \
 			moves_swap.c \
 			sort_large.c \
 			sort_little.c \
+			sort_medium.c \
 			utils.c \
 
 SRCS := ${SRCS:%=${SRC_DIR}/%}

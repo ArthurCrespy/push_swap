@@ -59,14 +59,21 @@ void	rra(t_data **stack_a);
 void	rrb(t_data **stack_b);
 
 /* --------- SORT-LA --------- */
+int		ft_lowest_index(t_data *stack);
+int		ft_biggest_index(t_data *stack);
 void	large_stack_sort(t_data **stack_a, t_data **stack_b, int median);
 
 /* --------- SORT-LI --------- */
 void	little_stack_sort(t_data **stack_b);
 
+/* --------- SORT-ME --------- */
+void	medium_stack_sort(t_data **stack_a, t_data **stack_b);
+
 /* ---------- UTILS ---------- */
 void	ft_print_func(char *str);
 int		ft_strcmp(const char *s1, const char *s2);
 long	ft_atoi(const char *str);
+
+void	print_list(t_data *stack_a, t_data *stack_b);
 
 #endif

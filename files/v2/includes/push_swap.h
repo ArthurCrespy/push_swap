@@ -34,7 +34,7 @@ void	create_stack(t_data **stack_a, int argc, char **argv);
 
 /* -------- LISTS-REM -------- */
 void	remove_node(t_data **stack);
-void	clear_list(t_data *stack_a);
+void	clear_list(t_data *stack_a, t_data *stack_b);
 
 /* ------- LISTS-UTILS ------- */
 size_t	ft_nodelen(t_data *stack);

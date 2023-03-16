@@ -29,14 +29,20 @@ void	remove_node(t_data **stack)
 	free(tmp);
 }
 
-void	clear_list(t_data *stack_a)
+void	clear_list(t_data *stack_a, t_data *stack_b)
 {
 	t_data	*tmp;
 
-	while (stack_a != NULL)
+	while (stack_a)
 	{
-		tmp = stack_a;
-		stack_a = stack_a->next;
-		free(tmp);
+		tmp = stack_a->next;
+		free(stack_a);
+		stack_a = tmp;
+	}
+	while (stack_b)
+	{
+		tmp = stack_b->next;
+		free(stack_b);
+		stack_b = tmp;
 	}
 }

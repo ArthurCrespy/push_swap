@@ -16,7 +16,6 @@ SRC_DIR     := srcs
 SRCS := \
 			errors.c \
 			lists_add_nodes.c \
-			lists_print.c \
 			lists_remove_nodes.c \
 			lists_utils.c \
 			main.c \

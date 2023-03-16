@@ -12,12 +12,6 @@
 
 #include "../includes/push_swap.h"
 
-/*
- * 0% chance of doing more than 12 moves to sort 5 elements
- * 5% chance of doing more than 1100 moves to sort 100 elements
- * 1.8% chance of doing more than 8000 moves to sort 500 elements
- */
-
 int	main(int argc, char **argv)
 {
 	t_data	*stack_a;

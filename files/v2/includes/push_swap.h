@@ -74,6 +74,4 @@ void	ft_print_func(char *str);
 int		ft_strcmp(const char *s1, const char *s2);
 long	ft_atoi(const char *str);
 
-void	print_list(t_data *stack_a, t_data *stack_b);
-
 #endif

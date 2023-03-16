@@ -12,16 +12,16 @@
 
 #include "../includes/push_swap.h"
 
-void	medium_stack_sort(t_data **stack_a, t_data **stack_b)
-{
-	
-}
+/*
+ * 0% chance of doing more than 12 moves to sort 5 elements
+ * 5% chance of doing more than 1100 moves to sort 100 elements
+ * 1.8% chance of doing more than 8000 moves to sort 500 elements
+ */
 
 int	main(int argc, char **argv)
 {
 	t_data	*stack_a;
 	t_data	*stack_b;
-	t_data	*tmp;
 
 	stack_a = NULL;
 	stack_b = NULL;
@@ -33,16 +33,8 @@ int	main(int argc, char **argv)
 	else if (ft_nodelen(stack_a) == 5)
 		medium_stack_sort(&stack_a, &stack_b);
 	else
-	{
 		large_stack_sort(&stack_a, &stack_b, ft_nodelen(stack_a) / 2);
-		while (stack_a)
-		{
-			tmp = stack_a->next;
-			free(stack_a);
-			stack_a = tmp;
-		}
-	}
 	write(1, "\n", 1);
-	//print_list(stack_a, stack_b);
+	clear_list(stack_a, stack_b);
 	return (0);
 }

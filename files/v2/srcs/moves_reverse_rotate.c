@@ -26,7 +26,6 @@ void	rra(t_data **stack_a)
 	last_node->next = NULL;
 	tmp->next = *stack_a;
 	*stack_a = tmp;
-	free(last_node);
 	ft_print_func("rra");
 }
 

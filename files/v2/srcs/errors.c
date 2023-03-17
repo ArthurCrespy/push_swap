@@ -81,10 +81,8 @@ int	check_args_sorted(int i_stack_a, char **stack_a)
 
 int	check_args(int i_stack_a, char **stack_a)
 {
-	if (check_args_nb(i_stack_a) == 1)
+	if (check_args_nb(i_stack_a))
 		return (1);
-	if (check_args_nb(i_stack_a) == 2)
-		return (write(1, "Error\n", 6), 1);
 	if (check_args_content(stack_a) == 1)
 		return (write(1, "Error\n", 6), 1);
 	if (check_args_duplicate(stack_a) == 1)

@@ -34,7 +34,7 @@ int	check_args_content(char **stack_a)
 		{
 			if (ft_atoi(stack_a[i]) > INT_MAX || ft_atoi(stack_a[i]) < INT_MIN)
 				return (1);
-			if (stack_a[i][j] == '-' || stack_a[i][j] == '+')
+			if (j == 0 && (stack_a[i][j] == '-' || stack_a[i][j] == '+'))
 				j++;
 			if (stack_a[i][j] < '0' || stack_a[i][j] > '9')
 				return (1);

@@ -89,8 +89,8 @@ void	large_stack_sort(t_data **stack_a, t_data **stack_b, int median)
 	int	amount;
 
 	i = 0;
-	start = median - ((10 * ft_nodelen(*stack_a) / 100) / 2);
-	stop = median + ((10 * ft_nodelen(*stack_a) / 100) / 2);
+	start = median - ((17 * ft_nodelen(*stack_a) / 100) / 2);
+	stop = median + ((17 * ft_nodelen(*stack_a) / 100) / 2);
 	amount = (stop - start) + 1;
 	create_index(stack_a);
 	create_index(stack_b);

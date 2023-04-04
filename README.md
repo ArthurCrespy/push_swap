@@ -18,7 +18,7 @@ optimized data sorting.</a></h4>
     <a href="https://github.com/ArthurCrespy/push_swap"> <img alt="Lines of code" src="https://img.shields.io/tokei/lines/github/ArthurCrespy/push_swap"></a>
     <a href="https://github.com/ArthurCrespy/push_swap/commits"> <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/ArthurCrespy/push_swap?color=yellow"></a>
     <a href="https://github.com/ArthurCrespy/push_swap/watchers"> <img alt="GitHub watchers" src="https://img.shields.io/github/watchers/ArthurCrespy/push_swap?color=ff69b4""></a>
-    <a href="https://projects.intra.42.fr/42cursus-push_swap/acrespy"> <img alt="Result: NA/100" src="https://img.shields.io/badge/result-NA/100-brightgreen"></a>
+    <a href="https://projects.intra.42.fr/42cursus-push_swap/acrespy"> <img alt="Result: 86/100" src="https://img.shields.io/badge/result-86/100-brightgreen"></a>
 
 </p>
 

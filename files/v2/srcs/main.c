@@ -22,7 +22,7 @@ int	main(int argc, char **argv)
 	if (check_args(argc, argv))
 		return (1);
 	create_stack(&stack_a, argc, argv);
-	if (check_list_duplicate(stack_a))
+	if (check_list(stack_a))
 		return (1);
 	if (ft_nodelen(stack_a) == 2)
 		micro_stack_sort(&stack_a);

@@ -87,8 +87,5 @@ int	check_args(int i_stack_a, char **stack_a)
 		return (1);
 	if (check_args_duplicate(stack_a) == 1)
 		return (write(1, "Error\n", 6), 1);
-	if (check_args_sorted(i_stack_a, stack_a) == 1)
-		return (1);
-	else
-		return (0);
+	return (0);
 }

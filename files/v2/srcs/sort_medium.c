@@ -12,17 +12,6 @@
 
 #include "../includes/push_swap.h"
 
-int	check_if_sorted(t_data *stack_a)
-{
-	while (stack_a->next)
-	{
-		if (stack_a->index > stack_a->next->index)
-			return (0);
-		stack_a = stack_a->next;
-	}
-	return (1);
-}
-
 void	go_to_a_index(t_data **stack_a, int index)
 {
 	int		i;
@@ -53,7 +42,7 @@ void	medium_stack_sort(t_data **stack_a, t_data **stack_b)
 	go_to_a_index(stack_a, ft_lowest_index(*stack_a));
 	pb(stack_a, stack_b);
 	create_index(stack_a);
-	if (!check_if_sorted(*stack_a))
+	if (!check_list_sorted(*stack_a))
 		little_stack_sort(stack_a);
 	pa(stack_a, stack_b);
 	pa(stack_a, stack_b);

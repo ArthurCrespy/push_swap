@@ -25,6 +25,32 @@ size_t	ft_nodelen(t_data *stack)
 	return (i);
 }
 
+int	check_list(t_data *stack_a)
+{
+	if (check_list_duplicate(stack_a))
+	{
+		clear_list(stack_a, NULL);
+		return (write(1, "Error\n", 6), 1);
+	}
+	if (check_list_sorted(stack_a))
+	{
+		clear_list(stack_a, NULL);
+		return (1);
+	}
+	return (0);
+}
+
+int	check_list_sorted(t_data *stack_a)
+{
+	while (stack_a->next)
+	{
+		if (stack_a->index > stack_a->next->index)
+			return (0);
+		stack_a = stack_a->next;
+	}
+	return (1);
+}
+
 int	check_list_duplicate(t_data *stack)
 {
 	t_data	*tmp;
@@ -37,7 +63,7 @@ int	check_list_duplicate(t_data *stack)
 		while (tmp2 != NULL)
 		{
 			if (tmp->data == tmp2->data)
-				return (write(1, "Error\n", 6), 1);
+				return (1);
 			tmp2 = tmp2->next;
 		}
 		tmp = tmp->next;

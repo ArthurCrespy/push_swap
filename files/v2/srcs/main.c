@@ -24,7 +24,9 @@ int	main(int argc, char **argv)
 	create_stack(&stack_a, argc, argv);
 	if (check_list_duplicate(stack_a))
 		return (1);
-	if (ft_nodelen(stack_a) == 3)
+	if (ft_nodelen(stack_a) == 2)
+		micro_stack_sort(&stack_a);
+	else if (ft_nodelen(stack_a) == 3)
 		little_stack_sort(&stack_a);
 	else if (ft_nodelen(stack_a) == 5)
 		medium_stack_sort(&stack_a, &stack_b);

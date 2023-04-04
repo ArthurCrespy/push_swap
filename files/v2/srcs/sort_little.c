@@ -18,6 +18,17 @@ void	rra_sa(t_data **stack_a)
 	sa(*stack_a);
 }
 
+void	micro_stack_sort(t_data **stack_a)
+{
+	int	a;
+	int	b;
+
+	a = (*stack_a)->index;
+	b = (*stack_a)->next->index;
+	if (a > b)
+		sa(*stack_a);
+}
+
 void	little_stack_sort(t_data **stack_a)
 {
 	int	a;

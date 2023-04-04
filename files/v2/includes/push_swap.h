@@ -65,6 +65,7 @@ int		ft_biggest_index(t_data *stack);
 void	large_stack_sort(t_data **stack_a, t_data **stack_b, int median);
 
 /* --------- SORT-LI --------- */
+void	micro_stack_sort(t_data **stack_a);
 void	little_stack_sort(t_data **stack_b);
 
 /* --------- SORT-ME --------- */

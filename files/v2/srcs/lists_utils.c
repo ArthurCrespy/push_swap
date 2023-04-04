@@ -25,7 +25,7 @@ size_t	ft_nodelen(t_data *stack)
 	return (i);
 }
 
-int check_list_duplicate(t_data *stack)
+int	check_list_duplicate(t_data *stack)
 {
 	t_data	*tmp;
 	t_data	*tmp2;
@@ -37,7 +37,7 @@ int check_list_duplicate(t_data *stack)
 		while (tmp2 != NULL)
 		{
 			if (tmp->data == tmp2->data)
-					return (write(1, "Error\n", 6), 1);
+				return (write(1, "Error\n", 6), 1);
 			tmp2 = tmp2->next;
 		}
 		tmp = tmp->next;

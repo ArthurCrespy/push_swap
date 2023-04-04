@@ -38,6 +38,7 @@ void	clear_list(t_data *stack_a, t_data *stack_b);
 
 /* ------- LISTS-UTILS ------- */
 size_t	ft_nodelen(t_data *stack);
+int		check_list_duplicate(t_data *stack);
 void	create_index(t_data **stack_a);
 
 /* ----------- PUSH ---------- */

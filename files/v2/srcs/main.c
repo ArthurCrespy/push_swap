@@ -22,6 +22,8 @@ int	main(int argc, char **argv)
 	if (check_args(argc, argv))
 		return (1);
 	create_stack(&stack_a, argc, argv);
+	if (check_list_duplicate(stack_a))
+		return (1);
 	if (ft_nodelen(stack_a) == 3)
 		little_stack_sort(&stack_a);
 	else if (ft_nodelen(stack_a) == 5)
